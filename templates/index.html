@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fake News Detector</title>
+</head>
+<body>
+    <h2>Enter a news article to check if it's real or fake:</h2>
+
+    <form action="/predict" method="post">
+        <textarea id="news_input" name="news" rows="5" cols="50"></textarea><br>
+        <button type="submit">Check</button>
+    </form>
+
+    <h3>Try These Examples:</h3>
+    
+    <button onclick="document.getElementById('news_input').value='NASA confirms presence of water on Mars.'">NASA Discovery</button>
+    <button onclick="document.getElementById('news_input').value='COVID-19 vaccine turns people into zombies!'">Vaccine Conspiracy</button>
+    <button onclick="document.getElementById('news_input').value='Aliens have landed in New York, says secret government document!'">Alien Landing</button>
+    <button onclick="document.getElementById('news_input').value='Stock markets show steady growth amid economic recovery.'">Stock Market</button>
+    <button onclick="document.getElementById('news_input').value='Scientists discover a new way to reverse aging!'">Reverse Aging</button>
+    <button onclick="document.getElementById('news_input').value='World Health Organization announces new COVID-19 guidelines.'">WHO COVID Update</button>
+    <button onclick="document.getElementById('news_input').value='5G technology is being used to control human minds!'">5G Conspiracy</button>
+    <button onclick="document.getElementById('news_input').value='Schools to remain open despite rising flu cases.'">School Decision</button>
+    <button onclick="document.getElementById('news_input').value='Celebrity fakes their own death to escape debt!'">Celebrity Scandal</button>
+    <button onclick="document.getElementById('news_input').value='Scientists find evidence of parallel universes.'">Parallel Universe</button>
+
+    {% if prediction %}
+        <h3>Prediction: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
